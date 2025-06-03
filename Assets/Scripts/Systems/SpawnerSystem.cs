@@ -46,7 +46,8 @@ partial struct SpawnerSystem : ISystem
                         // Spawn entity at calculated position
                         var instance = state.EntityManager.Instantiate(spawner.ValueRO.Prefab);
                         SystemAPI.SetComponent(instance, new LocalTransform { Position = position, Rotation = quaternion.identity, Scale = 1f });
-                        SystemAPI.SetComponent(instance, new CubeComponent { Speed = 1.0f, Position = position, AngleOffset = random.NextFloat(0f, math.PI * 2f), Scale = 0.2f });
+                        SystemAPI.SetComponent(instance, new FlowerMovement { Speed = 1.0f, Position = position, AngleOffset = random.NextFloat(0f, math.PI * 2f), Scale = 0.2f });
+                        SystemAPI.SetComponent(instance, new CubeComponent());
                     }
                 }
             }

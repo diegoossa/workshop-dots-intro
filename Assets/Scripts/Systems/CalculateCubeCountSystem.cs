@@ -11,7 +11,6 @@ namespace Systems
             state.RequireForUpdate<CubeComponent>();
         }
 
-        // [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
             EntityQuery cubeQuery = SystemAPI.QueryBuilder().WithAll<CubeComponent>().Build();
