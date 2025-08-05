@@ -8,7 +8,7 @@ using Unity.Transforms;
 /// </summary>
 partial struct CubeMovementSystem : ISystem
 {
-    [BurstCompile]
+    // [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
         var time = (float)SystemAPI.Time.ElapsedTime;
@@ -20,7 +20,7 @@ partial struct CubeMovementSystem : ISystem
             float theta = time * flowerMovement.ValueRO.Speed + flowerMovement.ValueRO.AngleOffset;
             
             // Use the flower equation to compute the radius:
-            float r = math.sin(4.0f * theta);
+            float r = math.sin(2.0f * theta);
 
             // Convert polar coordinates into Cartesian. Then apply per-entity scale.
             float offsetX = r * math.cos(theta) * flowerMovement.ValueRO.Scale;
